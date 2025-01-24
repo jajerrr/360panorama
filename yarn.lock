@@ -3569,6 +3569,13 @@ packrup@^0.1.2:
   resolved "https://registry.npmjs.org/packrup/-/packrup-0.1.2.tgz"
   integrity sha512-ZcKU7zrr5GlonoS9cxxrb5HVswGnyj6jQvwFBa6p5VFw7G71VAHcUKL5wyZSU/ECtPM/9gacWxy2KFQKt1gMNA==
 
+panolens@^0.12.1:
+  version "0.12.1"
+  resolved "https://registry.yarnpkg.com/panolens/-/panolens-0.12.1.tgz#e636546f0d9d98d241652dd990e17cd9a9924f80"
+  integrity sha512-2hpjm+rRnDdaLD5Bak49K0Y9/X6vOr1OcyJx5piSA6sCOs1tsgchMgKIwpSGCMpBMHWZ10E/Cz4BIwyXYebt5g==
+  dependencies:
+    three "^0.105.2"
+
 parse-git-config@^3.0.0:
   version "3.0.0"
   resolved "https://registry.npmjs.org/parse-git-config/-/parse-git-config-3.0.0.tgz"
@@ -4507,6 +4514,11 @@ text-decoder@^1.1.0:
   dependencies:
     b4a "^1.6.4"
 
+three@^0.105.2:
+  version "0.105.2"
+  resolved "https://registry.npmjs.org/three/-/three-0.105.2.tgz"
+  integrity sha512-L3Al37k4g3hVbgFFS251UVtIc25chhyN0/RvXzR0C+uIBToV6EKDG+MZzEXm9L2miGUVMK27W46/VkP6WUZXMg==
+
 three@^0.147.0:
   version "0.147.0"
   resolved "https://registry.npmjs.org/three/-/three-0.147.0.tgz"
@@ -4514,7 +4526,7 @@ three@^0.147.0:
 
 three@^0.172.0:
   version "0.172.0"
-  resolved "https://registry.npmjs.org/three/-/three-0.172.0.tgz"
+  resolved "https://registry.yarnpkg.com/three/-/three-0.172.0.tgz#6944a72f8439e8f7e4b034c8539ec82f5ebe0082"
   integrity sha512-6HMgMlzU97MsV7D/tY8Va38b83kz8YJX+BefKjspMNAv0Vx6dxMogHOrnRl/sbMIs3BPUKijPqDqJ/+UwJbIow==
 
 tiny-invariant@^1.1.0:

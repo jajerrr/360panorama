@@ -12,6 +12,7 @@
   "dependencies": {
     "@photo-sphere-viewer/markers-plugin": "^5.11.5",
     "nuxt": "^3.15.2",
+    "panolens": "^0.12.1",
     "photo-sphere-viewer": "^4.8.1",
     "three": "^0.172.0",
     "vue": "latest",
