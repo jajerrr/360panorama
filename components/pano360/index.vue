@@ -63,16 +63,15 @@ onMounted(() => {
 
 <style scoped>
 .body {
-  width: 100%;
-  height: 100%;
+  margin: 0px !important;
   overflow: hidden;
-  margin: 0;
+ 
 }
 
 #container {
   position: relative;
   width: 100%;
-  height: 90vh;
+  height: 100dvh;
   background: #000;
 }
 </style>

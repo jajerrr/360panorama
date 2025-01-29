@@ -1,0 +1,12 @@
+:root {
+    --nuxt-devtools-safe-area-top: env(safe-area-inset-top, 0px);
+    --nuxt-devtools-safe-area-bottom: env(safe-area-inset-bottom, 0px);
+    --nuxt-devtools-safe-area-left: env(safe-area-inset-left, 0px);
+    --nuxt-devtools-safe-area-right: env(safe-area-inset-right, 0px);
+}
+
+.fullscreen-container {
+    height: calc(100dvh - var(--nuxt-devtools-safe-area-bottom, 0px));
+    padding-left: var(--nuxt-devtools-safe-area-left, 0px);
+    padding-right: var(--nuxt-devtools-safe-area-right, 0px);
+}
