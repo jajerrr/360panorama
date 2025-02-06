@@ -5,5 +5,5 @@
 </template>
 
 <script setup>
-import PanoramaViewer from '~/components/pano360/panorama2.vue';
+import PanoramaViewer from '~/components/pano360/panomodel.vue';
 </script>
