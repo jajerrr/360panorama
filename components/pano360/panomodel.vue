@@ -26,14 +26,19 @@
       PANOLENS = panolensModule;
       THREE = threeModule;
   
-      let panorama,panorama2, viewer, container, panel, infospot;
+      let panorama,panorama2, viewer, container, panel ;
 
       const lookAtPositions = [
       new THREE.Vector3(559.8459919997684,100.35087531640147,-4966.538348494355),
+      new THREE.Vector3( 3869.5684907464592,  93.40258122857671,  3163.4975348879307), // Fixed Position 2
+  new THREE.Vector3(559.8459919997684,100.35087531640147,-4966.538348494355),   // Fixed Position 3
     ];
 
     const infospotPositions = [
       new THREE.Vector3(3136.06, 1216.3, -3690.14),
+      new THREE.Vector3(559.8459919997684,100.35087531640147,-4966.538348494355),
+      new THREE.Vector3(2000.0, 500.0, -1500.0), // Position for pano3
+      new THREE.Vector3(3869.5684907464592,  93.40258122857671,  3163.4975348879307), // Position for pano3
     ];
   
       container = document.querySelector("#container");
@@ -64,17 +69,24 @@ panorama2.addEventListener("enter-fade-start", () => {
 panorama.link(panorama2, infospotPositions[0]);
   
       // Create Infospot
-      infospot = new PANOLENS.Infospot(350, PANOLENS.DataImage.Info);
+      const infospot = new PANOLENS.Infospot(350, PANOLENS.DataImage.Info);
       infospot.position.set(0, -2000, -5000);
       infospot.addHoverElement(panel, 150);
+    //   infospot.addEventListener("click", () => {
+    //   showModel.value = !showModel.value;
+    // });
       panorama.add(infospot);
 
 
-      const infospot2 = new PANOLENS.Infospot(350, PANOLENS.DataImage.Info);
-    infospot2.position.set(0, 1000, -5000);
-    infospot2.addHoverElement(panel, 150);
-    panorama2.add(infospot2);
+    const infospot2 = new PANOLENS.Infospot(350, PANOLENS.DataImage.Info);
+infospot2.position.set(1000, 500, -3000);  // เปลี่ยนตำแหน่ง
+infospot2.addHoverElement(panel, 150);  // ใช้ panel อีกตัวหนึ่งหรืออาจจะเปลี่ยนเป็นอันอื่น
+panorama2.add(infospot2);
   
+
+
+
+
       // Create Viewer
       viewer = new PANOLENS.Viewer({ 
         container: container,

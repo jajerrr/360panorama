@@ -1,10 +1,18 @@
 <template>
   <div :style="safeAreaStyle">
     <div id="container" class="panorama-container"></div>
+    <div 
+      v-if="showModel" 
+      class="model-overlay"
+      :style="{ top: modelPosition.y + 'px', left: modelPosition.x + 'px' }"
+    >
+      <Pano360Model />
+    </div>
   </div>
 </template>
 
 <script setup>
+import { Pano360Model } from "#components";
 import { onMounted } from "vue";
 
 const safeAreaStyle = computed(() => ({
@@ -12,8 +20,12 @@ const safeAreaStyle = computed(() => ({
   paddingLeft: `env(safe-area-inset-left, 0px)`,
   paddingRight: `env(safe-area-inset-right, 0px)`,
 }));
+
+const modelPosition = ref({ x: "50%", y: "50%" }); // กลางจอ (ปรับตามต้องการ)
+
 // Use a dynamic import for Panolens
 let PANOLENS, THREE;
+const showModel = ref(false);
 
 onMounted(async () => {
   if (process.client) {
@@ -105,7 +117,10 @@ panorama3.addEventListener("enter-fade-start", () => {
     // Add infospot to panorama 1
     infospot = new PANOLENS.Infospot(350, PANOLENS.DataImage.Info);
     infospot.position.set(0, -2000, -5000);
-    infospot.addHoverText("Welcome to Panorama 1"); // Add hover text
+    infospot.addHoverText("Welcome to Panorama 1"); 
+    infospot.addEventListener("click", () => {
+      showModel.value = !showModel.value;
+    });// Add hover text
     panorama.add(infospot);
 
     // Add infospot to panorama 3
@@ -175,5 +190,12 @@ body,
   width: 100% !important;
   height: 100% !important;
   background: black !important;
+}
+
+/* ✅ ตำแหน่งโมเดลถูกยึดไว้ ไม่ขยับตาม Panorama */
+.model-overlay {
+  position: fixed;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
 }
 </style>
